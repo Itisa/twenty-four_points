@@ -3,27 +3,25 @@ import time
 def find_number(nums,f):
 	i = 0
 	a = nums
-	print a.index(f)
+	# print a.index(f)
 	b = 0
-	c = 0
-	d = 0
-	for z in range(22):
+	for z in range(19):
 	# while len(a) != 1:
-		b = int(len(a) / 2 )
-		c = a[0]
-		if not c == 1:
-			d = 2
+		b = (a[0] + a[len(a) - 1]) / 2
+		# if b == f:
+		# 	return a[0] + 1
+		if b > f:
+			a = range(a[0],b + 1)
 		else:
-			d = 3
-		if a[(b + 2) * d / 2 ] >= f:
-			a = range(c,b * 3 / 2 + c)
-		else:
-			a = range(b + c,len(a) + c)
-		print c,len(a)	
-	return a[0],a
+			a = range(b,a[len(a) - 1] + 1)
+			# d *= 2
+		print a[0],len(a)
+	print b,a 
+	return a[0] - 1
 
-ds = range(1,10001)
-f = 100
+ds = range(1,20001)
+# ds = [x * 2 for x in ds]
+f = 20000
 t = time.time()
 findex = find_number(ds,f)
 print 'cost time:',time.time() - t
