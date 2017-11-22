@@ -1,22 +1,20 @@
 import time
 
 def find_number(nums,f):
-	i = 0
 	a = nums
-	# print a.index(f)
-	b = 0
-	for z in range(19):
-	# while len(a) != 1:
-		b = (a[0] + a[len(a) - 1]) / 2
-		# if b == f:
-		# 	return a[0] + 1
-		if b > f:
-			a = range(a[0],b + 1)
+	middle = 0
+	while len(a) != 2:
+		middle = (a[0] + a[len(a) - 1]) / 2
+		if f == a[len(a) -1]:
+			return a[len(a) - 2]
+		if f > a[len(a) - 1] or f < a[0]:
+			return 'The nummiddleer is out of range.'
+		if middle > f:
+			a = range(a[0],middle + 1)
 		else:
-			a = range(b,a[len(a) - 1] + 1)
-			# d *= 2
+			a = range(middle,a[len(a) - 1] + 1)
 		print a[0],len(a)
-	print b,a 
+	print middle,a 
 	return a[0] - 1
 
 ds = range(1,20001)
