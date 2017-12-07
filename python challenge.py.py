@@ -36,6 +36,7 @@
 # # 	print b[z1],
 # 	# print ''
 #8JQP8QPUR
+
 ##### answer
 # from string import maketrans
 
@@ -75,6 +76,32 @@
 
 ########## level 4
 
-mx = 9223372036854775784
-ms = -9223372036854775807
-lilen = 9223372036854775808
+##### my writing
+# -24 ~ mx
+# ms ~ -1
+# mx =    9223372036854775784
+# ms =   -9223372036854775807
+# lilen = 9223372036854775808
+# print mx+ms
+
+##### answer
+# import urllib2
+# import re 
+
+
+# pattern = re.compile(r'\d+')
+
+# x = 82930
+# for z in range(400):
+# 	b = []
+# 	url = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s' % x
+# 	a = urllib2.urlopen(url)
+# 	a = a.read()
+# 	y =''.join(re.findall(pattern,a))
+# 	x = int(y)
+# 	print x
+
+###answer is 66831
+
+########## level 5
+(lp0 (lp1 (S' ' p2 I95 tp3 aa(lp4 (g2 I14 tp5 a(S
