@@ -104,4 +104,24 @@
 ###answer is 66831
 
 ########## level 5
-(lp0 (lp1 (S' ' p2 I95 tp3 aa(lp4 (g2 I14 tp5 a(S
+
+import cPickle
+
+a = 'E:\\sub work\\24\\txt\\level 5.txt'
+with open(a,'r') as f:
+	data = cPickle.load(f)
+	# print data
+	print len(data)
+	for z in data:
+		print z
+# print b,len(b),b[1]
+# for z in range(len(b)):
+# 	if b[z] == 'l' and b[z+1] == 'p':
+# 		print b[z],b[z+1],b[z+2],b[z+3],b[z+4]
+
+
+
+
+
+
+
