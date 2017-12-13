@@ -104,20 +104,27 @@
 ###answer is 66831
 
 ########## level 5
+# x = 0 
+# import cPickle
 
-import cPickle
+# a = 'E:\\sub work\\24\\txt\\level 5.txt'
+# with open(a,'r') as f:
+# 	data = cPickle.load(f)
 
-a = 'E:\\sub work\\24\\txt\\level 5.txt'
-with open(a,'r') as f:
-	data = cPickle.load(f)
-	# print data
-	print len(data)
-	for z in data:
-		print z
-# print b,len(b),b[1]
-# for z in range(len(b)):
-# 	if b[z] == 'l' and b[z+1] == 'p':
-# 		print b[z],b[z+1],b[z+2],b[z+3],b[z+4]
+##### dad's
+# 	for d in data:
+# 		xs = [k * v for k,v in d]
+# 		dd = ''.join(xs)
+# 		print dd
+
+##### mine
+# 	for z in data:
+# 		print
+# 		for z1 in z:
+# 			for z2 in range(z1[-1]):
+# 				print z1[0],
+
+########## level 6
 
 
 
