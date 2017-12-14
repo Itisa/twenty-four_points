@@ -126,8 +126,20 @@
 
 ########## level 6
 
+x = 0 
+import Image
+import ImageFilter
+path = 'E:\\sub work\\24\\txt\\channel.jpg'
 
+c = Image.open(path)
+c_sharp = c.filter( ImageFilter.SHARPEN )
+c_sharp.save( 'image_sharpened.jpg', 'JPEG' )
+r,g,b = c_sharp.split()
 
+print c
+print 'R:',r
+print 'G:',g
+print 'B:',b
 
 
 
