@@ -6,8 +6,8 @@ def x(m,n,o,p):
 	nums = [m,n,o,p]
 	signs = get_changes()
 	chas = get_chas()
-	ls = len(signs)
-	lenc = len(chas)
+	ls = len(signs)#256
+	lenc = len(chas)#24
 
 	for z in range(lenc):
 		a1 = nums[chas[z][0]]
@@ -23,13 +23,13 @@ def x(m,n,o,p):
 			ans1 = get_signs(fu0,a1,b1)
 			ans2 = get_signs(fu1,ans1,c1)
 			ans3 = get_signs(fu2,ans2,d1)
-			
 			if ans3 == SCORE:
 				return a1,fu0,b1,fu1,c1,fu2,d1
-	
+
 	return 'nothing'
 			
 def get_signs(s,a,b):
+	
 	if s == 0:
 		ans = a + b
 	elif s == 1:
@@ -37,8 +37,14 @@ def get_signs(s,a,b):
 	elif s == 2:
 		ans = a * b
 	else:
-		ans = a / b
-	return ans
+		if b != 0:
+			if a/b != a/b*b:
+				return -100
+			ans = a / b
+		else:
+			return -100
+
+	return ans		
 
 def get_changes():
 	x = [''] * 4
@@ -80,9 +86,19 @@ def final(lis):
 		c.append(z)
 	for z in range(3):
 		c[z*2+1] = b[a.index(c[z*2+1])]
-
+	for z in range(4):
+		c[z*2] = '%d' % c[z*2]
+	
+	if lis[1] < 2 and lis[3] > 1:
+		c.insert(0,'(')
+		c.insert(4,')')			
+	elif lis[1] < 2 and lis[5] > 1:
+		c.insert(0,'(')
+		c.insert(6,')')
+	elif lis[3] < 2 and lis[5] > 1:
+		c.insert(3,'(')
+		c.insert(6,')')
 	return c
-	# return c[0],c[1],c[2],c[3],c[4],c[5],c[6]
 
-an = x(10,10,4,4)
-print final(an)
+an = x(1,2,3,4)
+print ''.join(final(an))
