@@ -6,6 +6,7 @@
 <body>
 <script type="text/javascript">
 
+// functions//////////////////////////////
 function test(){
 	var a = 1;
 	document.write(a+'<br>');
@@ -14,6 +15,7 @@ function test(){
 		a++;
 	}
 }
+
 function test1(){
 	var a = 1;
 	while(a<=100){
@@ -23,6 +25,54 @@ function test1(){
 	alert(a);
 }
 
+// for...in//////////////////////////////
+var n={
+	a:123,
+	b:234,
+	c:345
+};
+for(var z in n){
+	document.write(z,n[z],'\n');
+}
+with(n){
+	document.write('a',a,'\n');
+	document.write('b',b,'\n');
+	document.write('c',c,'\n');
+}
+document.write('<br>');
+
+//with..//////////////////////////////
+function test2(a,b,c){
+	this.a=a;
+	this.b=b;
+	this.c=c;
+}
+var sth=new test2(987,876,765);
+with(sth){
+	document.write(a,'\n',b,'\n',c,'<br>');
+}
+
+//arrays//////////////////////////////
+// console.log();
+var arr = new Array();
+arr[9] = 'a';
+for(var i=0; i<=arr.length;i++){
+	document.write(arr[i-1],'\n');
+}
+document.write('<br>')
+
+var arr1 = [1,3,2,5,4,6,0,7,9,8]
+arr1.sort()
+arr1.reverse()
+document.write(arr1,'<br>')
+
+arr1.push(1)
+arr1.unshift(10)
+arr1.splice(1,0,20)
+document.write(arr1,'<br>')
+
+var str =arr1.join('-')
+document.write(str,'=',eval(str))
 
 
 </script>
