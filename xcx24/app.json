@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/test"
+  ],
+  "window":{
+    "navigationBarTitleText": "test1",
+    "navigationBarBackgroundColor": "#0ff0f0",
+    "backgroundColor": "#123456"
+    
+  }
+}
