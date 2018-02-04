@@ -1,13 +1,11 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/test"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小标题？",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#eeeeee"
+    "navigationBarTitleText": "test1",
+    "navigationBarBackgroundColor": "#90a0aa",
+    "backgroundColor": "#123456"
+    
   }
 }
