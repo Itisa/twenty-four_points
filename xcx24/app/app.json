@@ -3,7 +3,7 @@
     "pages/test"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#5000f0",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "24点运算器"
   }
 }

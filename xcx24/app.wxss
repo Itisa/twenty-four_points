@@ -1,47 +1,42 @@
-page {
-  display: block;
-  min-height: 100%;
-  background-color: grey;
-  
+page{
+  background-color: gray;
+
 }
-.num{
-  background: black; 
+/* this.target.dataset.nums */
+.text{
+  background-color: whitesmoke; 
+  height: 20rpx;
+  width: 200rpx;
+  margin-left: 275rpx;
+  margin-top: 50rpx;
+  /* border: 0.5rpx solid black; */
+  border-radius: 10rpx;
+}
+.buton{
+  background-color: blueviolet;
   color: white;
-  height: 140rpx;
-  width: 190rpx;
-  margin: 10rpx;
-  font-size: 48;
+  width: 100rpx;
+  height: 100rpx;
   float: left;
-  line-height: 4;
+  margin-top: 30rpx;
+  margin-left: 70rpx;
+  margin-bottom: 30rpx;
+  font-size: 4;
+  line-height: 2.5; 
 }
 
-.fu_hao{
-  background: black;
-  color: white;
-  height: 140rpx;
-  width: 90rpx;
-  margin: 10rpx;
-  font-size: 48;
-  float: left;
-  line-height: 4;
+.ans{
+  background-color: white;
+  margin-left: 200rpx;
+  margin-top: 50rpx; 
+  width: 350rpx;
+  font-size: 45rpx;
 }
-.text{
-  width: 610rpx;
-  height: 50rpx;
-  float: left;
-  margin: 10rpx;
-  font-size: 5;
-  color: black;
-  text-align: left;
-  line-height: 1.4;
-}
-.AC{
-  background: black;
-  color: white;
-  height: 50rpx;
-  width: 90rpx;
-  margin: 10rpx;
-  float: left;
-  font-size: 12;
-  line-height: 1.5;
+.buton_ans{
+  background-color: white;
+  border-radius: 0rpx; 
+  width: 350rpx;
+  border: 1px solid white; 
+  font-size: 36rpx; 
+  line-height: 50rpx;
 }
