@@ -5,7 +5,6 @@ page{
 /* this.target.dataset.nums */
 .text{
   background-color: whitesmoke; 
-  height: 20rpx;
   width: 200rpx;
   margin-left: 275rpx;
   margin-top: 50rpx;
@@ -21,10 +20,9 @@ page{
   margin-top: 30rpx;
   margin-left: 70rpx;
   margin-bottom: 30rpx;
-  font-size: 4;
+  font-size: 40rpx;
   line-height: 2.5; 
 }
-
 .ans{
   background-color: white;
   margin-left: 200rpx;
@@ -36,7 +34,24 @@ page{
   background-color: white;
   border-radius: 0rpx; 
   width: 350rpx;
+  margin-top: 50rpx;
   border: 1px solid white; 
   font-size: 36rpx; 
   line-height: 50rpx;
+}
+.yes{
+  background-color: whitesmoke;
+  height: 50rpx;
+  width: 150rpx;
+  margin-left: 300rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+}
+.X{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  margin-left: 60rpx;
+  margin-top: 0rpx; 
 }
