@@ -1,51 +1,55 @@
 // pages/test.js
 
-var n1,n2,n3,n4,n=1,ans
+var n1,n2,n3,n4,n=1,ans,nums=[]
 var input
 Page({
 
-  // onLoad: function (e) {
+  onLoad: function (e) {
   //   this.setData({ hid1: "true" });
   //   this.setData({ hid2: "true" });
   //   this.setData({ hid3: "true" });
   //   this.setData({ hid4: "true" });
-  //   this.setData({ hid_ans: "true"});
-  // },
+    this.setData({ hid_ans: "true"});
+  },
 
     
   find_input: function (e) {
-    input = e.detail.value
-    console.log(e.detail.value);
+    input = e.detail.value;
     
     if(input.length==2){
-      this.setData({ hid1: false });
+      this.setData({ num: nums[n-1]})
       switch (n) {
         case 1:
-          this.setData({ hid1: false });
-          this.setData({ num1: input });
+          nums = [input]
+          this.setData({ buton: nums });
           n = 2;
           ans = 0
           break;
         case 2:
-          this.setData({ hid2: false });
-          this.setData({ num2: input });
+          nums.push(input);
+          this.setData({ buton: nums });
           n = 3;
+          ans = 0
           break;
         case 3:
-          this.setData({ hid3: false });
-          this.setData({ num3: input });
+          nums.push(input);
+          this.setData({ buton: nums });
           n = 4;
+          ans = 0
           break;
         case 4:
-          this.setData({ hid4: false });
-          this.setData({ num4: input });
+          nums.push(input);
+          this.setData({ buton: nums });
           n = 1;
           ans = 1;
           break;
       }
-
-      if(ans == 1){
-        this.setData({ hid_ans: false})
+      console.log(ans,n);
+      if(ans == 1 & n == 1){
+        this.setData({ hid_ans: false });
+        
+      }else{
+        this.setData({ hid_ans: true });
       }
 
       return "";
@@ -56,6 +60,21 @@ Page({
   get_ans: function (e) {
     console.log(1)
     this.setData({ ans: 123 })
+  },
+  X: function (e) {
+    console.log(nums)
+    nums.pop();
+    this.setData({ buton: nums });
+
+    this.setData({ hid_ans: true });
+    console.log(n,nums);
+    if(n==1){
+      n = 4;
+      ans = 0;   
+    }else{
+      n -= 1;
+      ans = 0; 
+    }
   }
 
   
@@ -123,4 +142,4 @@ Page({
 //   onShareAppMessage: function () {
   
 //   }
-// })
+// 
