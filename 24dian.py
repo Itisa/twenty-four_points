@@ -8,6 +8,7 @@ def x(m,n,o,p):
 	chas = get_chas()
 	ls = len(signs)#256
 	lenc = len(chas)#24
+	ans = []
 
 	for z in range(lenc):
 		a1 = nums[chas[z][0]]
@@ -24,10 +25,15 @@ def x(m,n,o,p):
 			ans2 = get_signs(fu1,ans1,c1)
 			ans3 = get_signs(fu2,ans2,d1)
 			if ans3 == SCORE:
-				return a1,fu0,b1,fu1,c1,fu2,d1
+				if not [a1,fu0,b1,fu1,c1,fu2,d1] in ans:
+					ans.append([a1,fu0,b1,fu1,c1,fu2,d1])
 
-	return 'nothing'
-			
+
+	if ans == []:	
+		return 'nothing'
+	else:
+		return ans
+
 def get_signs(s,a,b):
 	
 	if s == 0:
@@ -38,11 +44,12 @@ def get_signs(s,a,b):
 		ans = a * b
 	else:
 		if b != 0:
-			if a/b != a/b*b:
-				return -100
-			ans = a / b
+			if a != a/b*b:
+				return -1000
+			else:
+				ans = a / b
 		else:
-			return -100
+			return -1000
 
 	return ans		
 
@@ -76,29 +83,43 @@ def get_chas():
 			re.append(x[:])
 	return re
 
-def final(lis):
-	if lis == 'nothing':
+
+def final(allis):
+	if allis == 'nothing':
 		return 'nothing'
 	a = [0,1,2,3]
 	b = ['+','-','*','/']
-	c = []
-	for z in lis:
-		c.append(z)
-	for z in range(3):
-		c[z*2+1] = b[a.index(c[z*2+1])]
-	for z in range(4):
-		c[z*2] = '%d' % c[z*2]
-	
-	if lis[1] < 2 and lis[3] > 1:
-		c.insert(0,'(')
-		c.insert(4,')')			
-	elif lis[1] < 2 and lis[5] > 1:
-		c.insert(0,'(')
-		c.insert(6,')')
-	elif lis[3] < 2 and lis[5] > 1:
-		c.insert(3,'(')
-		c.insert(6,')')
-	return c
+
+	for z in allis:
+		x = allis.index(z)
+
+		
+		for z1 in range(4):
+			z[z1*2] = '%s' % z[z1*2]
+		
+		if z[1] < 2 and z[3] > 1:
+			z[2] = '(' + z[2] 	
+			z[4] = z[4] + ')'
+		elif z[1] < 2 or z[3] < 2 and z[5] > 1:
+			z[0] = '(' + z[0] 
+			z[4] = z[4] + ')'
+		elif z[3] < 2 and z[5] > 1:
+			z[4] = '(' + z[4] 
+			z[6] = z[6] + ')'
+
+		for z1 in range(3):
+			z[z1*2+1] = b[a.index(z[z1*2+1])]
+		
+		allis[x] = z
+
+	return allis[:]
 
 an = x(1,2,3,4)
-print ''.join(final(an))
+fin = final(an)
+ans = []
+for z in fin:
+	ans.append(''.join(z))
+	
+# print ''.join(ans)
+print ans
+
