@@ -5,10 +5,6 @@ var input
 Page({
 
   onLoad: function (e) {
-  //   this.setData({ hid1: "true" });
-  //   this.setData({ hid2: "true" });
-  //   this.setData({ hid3: "true" });
-  //   this.setData({ hid4: "true" });
     this.setData({ hid_ans: "true"});
   },
 
@@ -17,7 +13,7 @@ Page({
     input = e.detail.value;
     
     if(input.length==2){
-      this.setData({ num: nums[n-1]})
+      // this.setData({ num: nums[n-1]})
       switch (n) {
         case 1:
           nums = [input]
@@ -44,10 +40,8 @@ Page({
           ans = 1;
           break;
       }
-      console.log(ans,n);
       if(ans == 1 & n == 1){
         this.setData({ hid_ans: false });
-        
       }else{
         this.setData({ hid_ans: true });
       }
@@ -58,16 +52,14 @@ Page({
   },
 
   get_ans: function (e) {
-    console.log(1)
     this.setData({ ans: 123 })
   },
   X: function (e) {
-    console.log(nums)
-    nums.pop();
+    console.log("");
+    nums.splice(e.target.dataset.num,1);
     this.setData({ buton: nums });
 
     this.setData({ hid_ans: true });
-    console.log(n,nums);
     if(n==1){
       n = 4;
       ans = 0;   

@@ -19,25 +19,9 @@ page{
   float: left;
   margin-top: 30rpx;
   margin-left: 70rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 60rpx;
   font-size: 40rpx;
   line-height: 2.5; 
-}
-.ans{
-  background-color: white;
-  margin-left: 200rpx;
-  margin-top: 50rpx; 
-  width: 350rpx;
-  font-size: 45rpx;
-}
-.buton_ans{
-  background-color: white;
-  border-radius: 0rpx; 
-  width: 350rpx;
-  margin-top: 50rpx;
-  border: 1px solid white; 
-  font-size: 36rpx; 
-  line-height: 50rpx;
 }
 .yes{
   background-color: whitesmoke;
@@ -49,9 +33,20 @@ page{
   line-height: 1.5;
 }
 .X{
-  height: 40rpx;
-  width: 40rpx;
+  height: 35rpx;
+  width: 35rpx;
   position: absolute;
-  margin-left: 60rpx;
+  margin-left: 136rpx;
+  margin-top: 30rpx; 
+  z-index: 12345;
+}
+.Ans{
+  background-color: white;
+  margin-left: 200rpx;
   margin-top: 0rpx; 
+  float: left;
+  width: 350rpx;
+  height: 60rpx;
+  font-size: 45rpx;
+  
 }
