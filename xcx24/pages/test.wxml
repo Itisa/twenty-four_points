@@ -1,5 +1,5 @@
 <!--pages/test.wxml-->
-<input class="text" maxlength="2" placeholder="数字"  bindblur="find_input" bindinput="find_input" type="number"></input>
+<input class="text" maxlength="2" placeholder="数字" bindinput="find_input" type="number"></input>
 
 <!-- <button class="yes">确定</button>  -->
 
@@ -8,10 +8,14 @@
 <button class="buton">{{i}}</button>
 </view>
 
-<!-- <button class="buton_ans" hover-class="none" hidden="{{hid_ans}}">答案：{{ans}}</button> -->
-
 <view class="Ans" hidden="{{hid_ans}}">答案：</view>
+
 <view class="Ans" hidden="{{hid_ans}}" wx:for="{{['(1+2+3)*4', '1*2*3*4', '1*2*4*3']}}" wx:for-item="i">
-  <view>{{i}}</view>
+  <view class="Ans_Text" wx:for="{{i}}" wx:for-item="j">
+
+    <text wx:if="Numcolor">{{j}}</text>
+    <text wx:else class="Num">{{j}}</text>
+  
+  </view>
 </view>
 

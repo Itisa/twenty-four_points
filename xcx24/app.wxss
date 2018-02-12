@@ -48,5 +48,10 @@ page{
   width: 350rpx;
   height: 60rpx;
   font-size: 45rpx;
-  
+}
+.Ans_Text{
+  float: left;
+}
+.Num{
+  color: green;
 }

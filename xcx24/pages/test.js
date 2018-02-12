@@ -67,6 +67,11 @@ Page({
       n -= 1;
       ans = 0; 
     }
+  },
+  Numcolor: function (e) {
+    console.log(1);
+    return false;
+    
   }
 
   
