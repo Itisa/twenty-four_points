@@ -119,7 +119,6 @@ fin = final(an)
 ans = []
 for z in fin:
 	ans.append(''.join(z))
-	
-# print ''.join(ans)
+
 print ans
 
