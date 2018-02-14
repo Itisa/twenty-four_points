@@ -111,14 +111,16 @@ def final(allis):
 			z[z1*2+1] = b[a.index(z[z1*2+1])]
 		
 		allis[x] = z
+	ans = []
+	fin = allis[:]
+	for z in fin:		
+		ans.append(''.join(z))
+	
+	return ans
 
-	return allis[:]
+if __name__ == '__main__':
+	
+	fin = final(x(1,2,3,4))
+	print fin
 
-an = x(1,2,3,4)
-fin = final(an)
-ans = []
-for z in fin:
-	ans.append(''.join(z))
-
-print ans
 
