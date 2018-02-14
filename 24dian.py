@@ -2,7 +2,7 @@ import math
 
 SCORE = 24
 
-def x(m,n,o,p):
+def get_24_point(m,n,o,p):
 	nums = [m,n,o,p]
 	signs = get_changes()
 	chas = get_chas()
@@ -32,7 +32,37 @@ def x(m,n,o,p):
 	if ans == []:	
 		return 'nothing'
 	else:
-		return ans
+
+		a = [0,1,2,3]
+		b = ['+','-','*','/']
+
+		for z in ans:
+			x = ans.index(z)
+
+			
+			for z1 in range(4):
+				z[z1*2] = '%s' % z[z1*2]
+			
+			if z[1] < 2 and z[3] > 1:
+				z[2] = '(' + z[2] 	
+				z[4] = z[4] + ')'
+			elif z[1] < 2 or z[3] < 2 and z[5] > 1:
+				z[0] = '(' + z[0] 
+				z[4] = z[4] + ')'
+			elif z[3] < 2 and z[5] > 1:
+				z[4] = '(' + z[4] 
+				z[6] = z[6] + ')'
+
+			for z1 in range(3):
+				z[z1*2+1] = b[a.index(z[z1*2+1])]
+			
+			ans[x] = z
+		anss = []
+		fin = ans[:]
+		for z in fin:		
+			anss.append(''.join(z))
+		
+		return anss
 
 def get_signs(s,a,b):
 	
@@ -84,43 +114,9 @@ def get_chas():
 	return re
 
 
-def final(allis):
-	if allis == 'nothing':
-		return 'nothing'
-	a = [0,1,2,3]
-	b = ['+','-','*','/']
-
-	for z in allis:
-		x = allis.index(z)
-
-		
-		for z1 in range(4):
-			z[z1*2] = '%s' % z[z1*2]
-		
-		if z[1] < 2 and z[3] > 1:
-			z[2] = '(' + z[2] 	
-			z[4] = z[4] + ')'
-		elif z[1] < 2 or z[3] < 2 and z[5] > 1:
-			z[0] = '(' + z[0] 
-			z[4] = z[4] + ')'
-		elif z[3] < 2 and z[5] > 1:
-			z[4] = '(' + z[4] 
-			z[6] = z[6] + ')'
-
-		for z1 in range(3):
-			z[z1*2+1] = b[a.index(z[z1*2+1])]
-		
-		allis[x] = z
-	ans = []
-	fin = allis[:]
-	for z in fin:		
-		ans.append(''.join(z))
-	
-	return ans
-
 if __name__ == '__main__':
 	
-	fin = final(x(1,2,3,4))
+	fin = get_24_point(1,2,3,4)
 	print fin
 
 
