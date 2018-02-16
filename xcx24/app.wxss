@@ -42,16 +42,22 @@ page{
 }
 .Ans{
   background-color: white;
-  margin-left: 200rpx;
+  margin-left: 125rpx;
   margin-top: 0rpx; 
   float: left;
-  width: 350rpx;
+  width: 500rpx;
   height: 60rpx;
-  font-size: 45rpx;
+  font-size: 48rpx;
 }
 .Ans_Text{
   float: left;
 }
 .Num{
   color: green;
+}
+.Fu{
+  color: black;
+}
+.Kuo{
+  color: blue;
 }

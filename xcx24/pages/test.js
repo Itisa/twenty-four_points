@@ -1,41 +1,72 @@
 // pages/test.js
 
-var n1,n2,n3,n4,n=1,ans,nums=[]
-var input
+var n1,n2,n3,n4,n=1,ans,nums=[];
+var input;
 Page({
 
-  onLoad: function (e) {
-    this.setData({ hid_ans: "true"});
+  data: {
+    e: "+",
+    f: "-",
+    g: "*",
+    h: "/",
+    i: "(",
+    k: ")",
+
+
+    // Things: [
+    //   { value:"+",  isnum: false, issign: true },
+    //   { value:"-",  isnum: false, issign: true },
+    //   { value:"*",  isnum: false, issign: true },
+    //   { value:"/",  isnum: false, issign: true },
+    //   { value:"(",  isnum: false, issign: true },
+    //   { value:")",  isnum: false, issign: true },
+    // ],
+    Things: {
+      "+": { isnum: false, issign: true },
+      "-": { isnum: false, issign: true },
+      "*": { isnum: false, issign: true },
+      "/": { isnum: false, issign: true },
+      "(": { isnum: false, issign: true },
+      ")": { isnum: false, issign: true },
+
+    },
+
+    hid_ans: "true",
+    ans_list: ['(1+2+3)*4', '1*2*3*4', '1*2*4*3']
   },
 
-    
+
   find_input: function (e) {
     input = e.detail.value;
-    
+
     if(input.length==2){
-      // this.setData({ num: nums[n-1]})
+
       switch (n) {
         case 1:
           nums = [input]
           this.setData({ buton: nums });
+          this.setData({ a: 1 });
           n = 2;
-          ans = 0
+          ans = 0;
           break;
         case 2:
           nums.push(input);
           this.setData({ buton: nums });
+          this.setData({ b: 2 });
           n = 3;
           ans = 0
           break;
         case 3:
           nums.push(input);
           this.setData({ buton: nums });
+          this.setData({ c: 3 });
           n = 4;
           ans = 0
           break;
         case 4:
           nums.push(input);
           this.setData({ buton: nums });
+          this.setData({ d: 4 });
           n = 1;
           ans = 1;
           break;

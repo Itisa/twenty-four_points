@@ -1,21 +1,22 @@
 <!--pages/test.wxml-->
 <input class="text" maxlength="2" placeholder="数字" bindinput="find_input" type="number"></input>
 
-<!-- <button class="yes">确定</button>  -->
 
-<view wx:for="{{buton}}" wx:for-item="i">
+
+<view wx:for="{{buton}}" wx:for-item="num">
 <image class="X" src="data:image/jpeg;base64,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" bindtap="X" data-num="{{index}}"></image>
-<button class="buton">{{i}}</button>
+<button class="buton">{{num}}</button>
 </view>
 
 <view class="Ans" hidden="{{hid_ans}}">答案：</view>
 
-<view class="Ans" hidden="{{hid_ans}}" wx:for="{{['(1+2+3)*4', '1*2*3*4', '1*2*4*3']}}" wx:for-item="i">
-  <view class="Ans_Text" wx:for="{{i}}" wx:for-item="j">
+<view class="Ans" hidden="{{hid_ans}}" wx:for="{{ans_list}}" wx:for-item="li">
+  <view class="Ans_Text" wx:for="{{li}}" wx:for-item="j">
+    <text wx:if="{{j==a || j==b || j==c || j==d}}" class="Num">{{j}}</text>        <text wx:elif="{{j==e || j==f || j==g || j==h}}" class="Fu">{{j}}</text>
+    <text wx:elif="{{j==i || j==k}}" class="Kuo">{{j}}</text>
+    <text wx:else>{{j}}</text> 
 
-    <text wx:if="Numcolor">{{j}}</text>
-    <text wx:else class="Num">{{j}}</text>
-  
   </view>
+  <text>=</text>
+  <text class="Num">24</text>
 </view>
-
