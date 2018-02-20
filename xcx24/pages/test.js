@@ -1,6 +1,6 @@
 // pages/test.js
 
-var n1,n2,n3,n4,n=1,ans,nums=[];
+var nu1,nu2,nu3,nu4,n=1,ans,nums=[];
 var input;
 Page({
 
@@ -43,36 +43,41 @@ Page({
 
       switch (n) {
         case 1:
+          nu1 = input
           nums = [input]
           this.setData({ buton: nums });
-          this.setData({ a: 1 });
+          this.setData({ a: nu1 });
           n = 2;
           ans = 0;
           break;
         case 2:
+          nu2 = input
           nums.push(input);
           this.setData({ buton: nums });
-          this.setData({ b: 2 });
+          this.setData({ b: nu2 });
           n = 3;
           ans = 0
           break;
         case 3:
+          nu3 = input
           nums.push(input);
           this.setData({ buton: nums });
-          this.setData({ c: 3 });
+          this.setData({ c: nu3 });
           n = 4;
           ans = 0
           break;
         case 4:
+          nu4 = input
           nums.push(input);
           this.setData({ buton: nums });
-          this.setData({ d: 4 });
+          this.setData({ d: nu4 });
           n = 1;
           ans = 1;
           break;
       }
       if(ans == 1 & n == 1){
         this.setData({ hid_ans: false });
+        this.get_anli(nu1,nu2,nu3,nu4);
       }else{
         this.setData({ hid_ans: true });
       }
@@ -80,6 +85,25 @@ Page({
       return "";
     }
     
+  },
+
+  get_anli: function (n1,n2,n3,n4) {
+    wx.request({
+      url: 'https://point.101weiqi.com/get24',
+      data: {
+        n1: n1,
+        n2: n2,
+        n3: n3,
+        n4: n4
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+        this.setData({ ans_list: res.data});
+      }
+    })
   },
 
   get_ans: function (e) {

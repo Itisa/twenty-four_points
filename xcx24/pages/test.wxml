@@ -1,6 +1,7 @@
 <!--pages/test.wxml-->
-<input class="text" maxlength="2" placeholder="数字" bindinput="find_input" type="number"></input>
-
+<form>
+<input class="text" maxlength="2" placeholder="数字" bindinput="find_input" type="number" bindblur="find_input"></input>
+</form>
 
 
 <view wx:for="{{buton}}" wx:for-item="num">
