@@ -30,7 +30,7 @@ def get_24_point(m,n,o,p):
 
 
 	if ans == []:	
-		return 'nothing'
+		return ''
 	else:
 
 		a = [0,1,2,3]
