@@ -2,11 +2,10 @@ page{
   background-color: gray;
 
 }
-/* this.target.dataset.nums */
 .text{
   background-color: whitesmoke; 
-  width: 200rpx;
-  margin-left: 275rpx;
+  width: 400rpx;
+  margin-left: 175rpx;
   margin-top: 50rpx;
   /* border: 0.5rpx solid black; */
   border-radius: 10rpx;
@@ -60,4 +59,21 @@ page{
 }
 .Kuo{
   color: blue;
+}
+.btom{
+  float: left;
+  width: 750rpx;
+  height: 50rpx;
+  background-color: gray;
+  border-radius: 0rpx;
+}
+.Ans_f{
+  background-color: white;
+  margin-top: 0rpx; 
+  float: left;
+  height: 70rpx;
+  font-size: 48rpx;
+  margin-left: 100rpx;
+  width: 550rpx;
+  
 }
