@@ -1,6 +1,8 @@
 import math
 
 SCORE = 24
+ans = []
+fu = []
 
 def get_24_point(m,n,o,p):
 	nums = [m,n,o,p]
@@ -8,9 +10,17 @@ def get_24_point(m,n,o,p):
 	chas = get_chas()
 	ls = len(signs)#256
 	lenc = len(chas)#24
-	ans = []
+
 
 	for z in range(lenc):
+		f = 0
+		ans_li = []
+		num_li = []
+		fu_li = []
+		ans_fn = []
+		n = 0
+		xyz = [2,3]
+
 		a1 = nums[chas[z][0]]
 		b1 = nums[chas[z][1]]
 		c1 = nums[chas[z][2]]
@@ -24,20 +34,51 @@ def get_24_point(m,n,o,p):
 			ans1 = get_signs(fu0,a1,b1)
 			ans2 = get_signs(fu1,ans1,c1)
 			ans3 = get_signs(fu2,ans2,d1)
+			
+			ans_li =  [a1,fu0,b1,fu1,c1,fu2,d1]
+			# num_li = [a1,b1,c1,d1]
+			# fu_li = [fu0,fu1,fu2]
+
 			if ans3 == SCORE:
-				if not [a1,fu0,b1,fu1,c1,fu2,d1] in ans:
-					ans.append([a1,fu0,b1,fu1,c1,fu2,d1])
-
-
+				if not ans_li in ans:
+					ans.append(ans_li)
+	
 	if ans == []:	
 		return ''
 	else:
+		for z in ans:
+			if not z in ans_fn:
+				fu_li = [z[1],z[3],z[5]]
+				
+				if not fu_li in fu:
+					ans_fn.append(z)
+					fu.append(fu_li)
+##################### testing below
+					# num_li = [z[0],z[2],z[4],z[6]]
+					
+					# for z1 in num_li:
+						
+					# 	num = z.index(z1)
+					# 	if num == 1:
+					# 		n == 0
+					# 	else:
+					# 		n = z[num-1]
+					# 		print z,z1,num-1,n
+						
+					# 	if z1 == 1 and n > 1:
+					# 		c_fu = xyz[xyz.index(n)]
+					# 		if num == 2:	 
+					# 			fu.append([c_fu,z[3],z[5]])
+					# 		elif num == 4:
+					# 			fu.append([z[1],c_fu,z[5]])
+					# 		elif num == 6:
+					# 			fu.append([z[1],z[3],c_fu])
 
 		a = [0,1,2,3]
 		b = ['+','-','*','/']
 
-		for z in ans:
-			x = ans.index(z)
+		for z in ans_fn:
+			x = ans_fn.index(z)
 
 			
 			for z1 in range(4):
@@ -56,12 +97,13 @@ def get_24_point(m,n,o,p):
 			for z1 in range(3):
 				z[z1*2+1] = b[a.index(z[z1*2+1])]
 			
-			ans[x] = z
+			ans_fn[x] = z
 		anss = []
-		fin = ans[:]
+		fin = ans_fn[:]
 		for z in fin:		
 			anss.append(''.join(z))
-		
+
+
 		return anss
 
 def get_signs(s,a,b):
@@ -114,9 +156,13 @@ def get_chas():
 	return re
 
 
+def del_num():
+	print fu
+
+
 if __name__ == '__main__':
 	
-	fin = get_24_point(1,2,3,6)
+	fin = get_24_point(12,3,4,1)
 	print fin
 
 
