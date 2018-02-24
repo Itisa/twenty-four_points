@@ -21,9 +21,9 @@ def get_list(nums):
 ds = range(1,100)
 xs = random.sample(ds,20)
 # xs = [x + 0.1 for x in xs]
-print xs
+print(xs)
 ns = get_list(xs)
-print ns
+print(ns)
 
 
 

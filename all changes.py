@@ -20,11 +20,11 @@ def get_changes(n):
 		f = 0
 
 		for z1 in range(n):
-			x[z1] = ((zs-f)/y[z1])%(y[z1])
+			x[z1] = (int((zs-f)/y[z1]))%(y[z1])
 			f += x[z1] * y[z1]
 		re.append(x[:])
 		
 	return re
 
-print get_changes(3)
+print(get_changes(3))
  

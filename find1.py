@@ -35,7 +35,7 @@ def find_number(n,f):
 
 	while 1:
 
-		middle = (start + end) / 2
+		middle = int((start + end) / 2)
 
 		if n[middle] == f:
 			return middle
@@ -53,23 +53,20 @@ def find_number(n,f):
 	else:
 		return -1
 
-# ds = range(1,20001)
-# ds = get_data()
 ds = get_string()
-# print get_obj()
-# ds = get_obj()
 
-f = 'x'
-print 'find:',f
+f = 'd'
+print('find:',f)
+
 if f in ds:
-	print 'index:',ds.index(f)
+	print('index:',ds.index(f))
 else:
-	print 'index:number is not in the list'
+	print('index:number is not in the list')
 t = time.time()
 findex = find_number(ds,f)
 
-print 'cost time:',time.time() - t
-print 'result:',findex
-print 'answer:',ds[findex]
+print('cost time:',time.time() - t)
+print('result:',findex)
+print('answer:',ds[findex])
 if ds[findex] == f:
-	print 'yes'
+	print('yes')

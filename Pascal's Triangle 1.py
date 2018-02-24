@@ -7,12 +7,12 @@ def get_trianglef(f):
 		b = []
 
 		for z1 in range(f - len(c)):
-			print '',
+			print(''),
 
 		for z1 in range(len(c)):
-			print c[z1],
+			print(c[z1]),
 			b.append(c[z1])
-		print ''
+		print(''),
 
 		a = len(c) - 1
 		c = []
