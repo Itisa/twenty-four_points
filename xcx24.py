@@ -41,7 +41,7 @@ def get_24_point(m,n,o,p):
 					ans.append(ans_li)
 
 	if ans == []:	
-		return ''
+		return 'nothing'
 	else:
 		for z in ans:
 			if not z in ans_fn:
